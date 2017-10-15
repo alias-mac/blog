@@ -1,0 +1,29 @@
+{
+  "name": "blog.open-war.com",
+  "description": "Source code for https://blog.open-war.com",
+  "version": "1.0.0",
+  "author": "Filipe Guerra <alias.mac@gmail.com>",
+  "repository": {
+    "url": "git@github.com:alias-mac/blog.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.68",
+    "gatsby-link": "^1.6.21",
+    "gatsby-plugin-react-helmet": "^1.0.7"
+  },
+  "keywords": [
+    "gatsby",
+    "blog",
+    "open-war.com"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "devDependencies": {
+    "prettier": "^1.7.4"
+  }
+}
