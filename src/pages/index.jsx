@@ -4,13 +4,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
 
 export default function IndexPage(props) {
   return (
     <ul>
       {props.data.allMarkdownRemark.edges.map(({ node }) => (
-        <li key={node.frontmatter.title}>
-          {node.frontmatter.title}
+        <li key={node.fields.slug}>
+          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
         </li>
       ))}
     </ul>
@@ -34,9 +35,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 10
       filter: { frontmatter: { published: { eq: true } } }
+      sort: { fields: [ fields___date ], order: DESC }
     ) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
