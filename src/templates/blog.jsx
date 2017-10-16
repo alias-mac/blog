@@ -4,14 +4,23 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDisqusComments from 'react-disqus-comments';
 
 export default function Template({ data }) {
 
+  const { slug } = data.markdownRemark.fields;
+  const { title } = data.markdownRemark.frontmatter;
+
   return (
     <article>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
+      <h1>{title}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      />
+      <ReactDisqusComments
+        shortname="blog-open-war"
+        title={title}
+        url={`https://blog.open-war.com${slug}`}
       />
     </article>
   );
@@ -31,6 +40,9 @@ export const postQuery = graphql`
   query TemplateBlogMarkdown($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
       }
