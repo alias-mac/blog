@@ -22,8 +22,13 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
-        frontmatter: PropTypes.shape({
-          title: PropTypes.string.isRequired,
+        node: PropTypes.shape({
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }).isRequired,
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+          }).isRequired,
         }).isRequired,
       })),
     }).isRequired,
