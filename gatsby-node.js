@@ -14,6 +14,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogTemplate = resolve('./src/templates/blog.jsx');
+  const tagsTemplate = resolve('./src/templates/tags.jsx');
   const tagTemplate = resolve('./src/templates/tag.jsx');
 
   const allMarkdown = await graphql(`{
@@ -63,6 +64,14 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
         tag,
       },
     });
+  });
+
+  createPage({
+    path: '/tags',
+    component: tagsTemplate,
+    context: {
+      tagList,
+    },
   });
 };
 
