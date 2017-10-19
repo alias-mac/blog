@@ -3,6 +3,7 @@
  */
 
 const { resolve } = require('path');
+const kebabCase = require('lodash.kebabcase');
 
 /**
  * Create blog pages.
@@ -13,6 +14,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogTemplate = resolve('./src/templates/blog.jsx');
+  const tagTemplate = resolve('./src/templates/tag.jsx');
 
   const allMarkdown = await graphql(`{
     allMarkdownRemark(limit: 1000) {
@@ -20,6 +22,9 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
         node {
           fields {
             slug
+          }
+          frontmatter {
+            tags
           }
         }
       }
@@ -30,12 +35,32 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     throw Error(allMarkdown.errors);
   }
 
+  const tagSet = new Set();
+
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+    if (node.frontmatter.tags) {
+      node.frontmatter.tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
+    }
+
     createPage({
       path: node.fields.slug,
       component: blogTemplate,
       context: {
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const tagList = Array.from(tagSet);
+  tagList.forEach((tag) => {
+    createPage({
+      path: `/tags/${kebabCase(tag)}/`,
+      component: tagTemplate,
+      context: {
+        tag,
       },
     });
   });
