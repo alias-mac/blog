@@ -16,6 +16,7 @@ export default function Template({ data }) {
   return (
     <article>
       <h1>{title}</h1>
+      <small>{data.markdownRemark.timeToRead} minutes to read</small>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
@@ -48,6 +49,7 @@ export const postQuery = graphql`
   query TemplateBlogMarkdown($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      timeToRead
       fields {
         slug
       }
