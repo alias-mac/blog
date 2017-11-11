@@ -11,7 +11,11 @@ export default function IndexPage(props) {
     <ul>
       {props.data.allMarkdownRemark.edges.map(({ node }) => (
         <li key={node.fields.slug}>
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+          <article>
+            <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
+            <small>{node.timeToRead} minutes to read</small>
+            <p>{node.excerpt}</p>
+          </article>
         </li>
       ))}
     </ul>
@@ -38,12 +42,14 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query BlogPosts {
     allMarkdownRemark(
-      limit: 10
+      limit: 1000
       filter: { frontmatter: { published: { eq: true } } }
       sort: { fields: [ fields___date ], order: DESC }
     ) {
       edges {
         node {
+          excerpt
+          timeToRead
           fields {
             slug
           }
