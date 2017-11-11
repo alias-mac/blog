@@ -5,6 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import kebabCase from 'lodash.kebabcase';
 
 export default function IndexPage(props) {
   return (
@@ -15,6 +16,12 @@ export default function IndexPage(props) {
             <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
             <small>{node.timeToRead} minutes to read</small>
             <p>{node.excerpt}</p>
+            <h4>Tags:</h4>
+            <ul>
+            {node.frontmatter.tags.map((tag) => (
+              <li key={tag}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>
+            ))}
+            </ul>
           </article>
         </li>
       ))}
@@ -55,6 +62,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            tags
           }
         }
       }
