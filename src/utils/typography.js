@@ -27,13 +27,14 @@ Theme.overrideThemeStyles = (typography, options, styles) => ({
   },
 
   'a[href*="://"]:after': {
-    content: `" " url(${getExternalLinkUrl({
+    content: '""',
+    background: `url(${getExternalLinkUrl({
       color: styles.a.color,
       height: 10,
       width: 10,
-    })})`,
-    top: '-5px',
-    position: 'relative',
+    })}) top right no-repeat`,
+    marginLeft: '2px',
+    paddingLeft: '10px', // width of the icon
   },
 });
 
