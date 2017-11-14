@@ -8,6 +8,8 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { Link } from 'react-router-dom';
 import kebabCase from 'lodash.kebabcase';
 
+import TimeToRead from '../components/TimeToRead';
+
 export default function Template({ data }) {
 
   const { slug } = data.markdownRemark.fields;
@@ -16,7 +18,7 @@ export default function Template({ data }) {
   return (
     <article>
       <h1>{title}</h1>
-      <small>{data.markdownRemark.timeToRead} minutes to read</small>
+      <TimeToRead minutes={data.markdownRemark.timeToRead}/>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />

@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import kebabCase from 'lodash.kebabcase';
 
+import TimeToRead from '../components/TimeToRead';
+
 export default function IndexPage(props) {
   return (
     <ul>
@@ -14,7 +16,7 @@ export default function IndexPage(props) {
         <li key={node.fields.slug}>
           <article>
             <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
-            <small>{node.timeToRead} minutes to read</small>
+            <TimeToRead minutes={node.timeToRead}/>
             <p>{node.excerpt}</p>
             <h4>Tags:</h4>
             <ul>
