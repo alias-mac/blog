@@ -8,6 +8,7 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { Link } from 'react-router-dom';
 import kebabCase from 'lodash.kebabcase';
 
+import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
 
 export default function Template({ data }) {
@@ -17,17 +18,15 @@ export default function Template({ data }) {
 
   return (
     <article>
-      <h1>{title}</h1>
-      <TimeToRead minutes={data.markdownRemark.timeToRead}/>
+      <h1 style={{ marginBottom: 0 }}>{title}</h1>
+      <div style={{ marginBottom: 'calc(0.40625rem - 1px)' }}>
+        <TimeToRead minutes={data.markdownRemark.timeToRead}/>
+      </div>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
       <h4>Tags:</h4>
-      <ul>
-        {tags.map(tag => (
-          <li key={kebabCase(tag)}><Link to={`tags/${kebabCase(tag)}`}>{tag}</Link></li>
-        ))}
-      </ul>
+      <Tags list={tags} />
       <ReactDisqusComments
         shortname="blog-open-war"
         title={title}

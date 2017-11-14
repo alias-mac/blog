@@ -5,13 +5,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import kebabCase from 'lodash.kebabcase';
 
+import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
 
 export default function IndexPage(props) {
   return (
-    <ul>
+    <ul style={{
+      listStyle: 'none',
+      margin: 0,
+    }}>
       {props.data.allMarkdownRemark.edges.map(({ node }) => (
         <li key={node.fields.slug}>
           <article>
@@ -19,11 +22,7 @@ export default function IndexPage(props) {
             <TimeToRead minutes={node.timeToRead}/>
             <p>{node.excerpt}</p>
             <h4>Tags:</h4>
-            <ul>
-            {node.frontmatter.tags.map((tag) => (
-              <li key={tag}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>
-            ))}
-            </ul>
+            <Tags list={node.frontmatter.tags} />
           </article>
         </li>
       ))}
