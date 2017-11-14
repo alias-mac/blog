@@ -9,7 +9,7 @@ import Helmet from 'react-helmet';
 
 import logo from './logo.png';
 
-import './index.css';
+import 'prismjs/themes/prism-okaidia.css';
 
 const Header = () => (
   <div
@@ -34,10 +34,12 @@ const Header = () => (
     <h1 style={{
         margin: 0,
         padding: 0,
+        borderBottom: 'none',
         fontSize: '60px',
-        lineHeight: '55px',
+        fontFamily: 'PT Sans',
+        lineHeight: '60px',
         letterSpacing: '-1px',
-        textShadow: '0 1px 0 #fff',
+        textShadow: '0 2px 0 #cecece',
       }}
     >
       <Link
@@ -56,7 +58,6 @@ const Header = () => (
       style={{
         color: '#7d7d7d',
         margin: 0,
-        padding: '15px 0 0',
         fontSize: '24px',
         fontWeight: 'normal',
         lineHeight: '28px',

@@ -7,8 +7,6 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import kebabCase from 'lodash.kebabcase';
 
-import 'prismjs/themes/prism-okaidia.css';
-
 export default function IndexPage(props) {
   return (
     <ul>
