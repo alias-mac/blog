@@ -5,11 +5,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDisqusComments from 'react-disqus-comments';
-import { Link } from 'react-router-dom';
-import kebabCase from 'lodash.kebabcase';
+import styled from 'styled-components';
 
 import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
+
+const Title = styled.h1`
+  margin-bottom: 0;
+`;
 
 export default function Template({ data }) {
 
@@ -18,10 +21,8 @@ export default function Template({ data }) {
 
   return (
     <article>
-      <h1 style={{ marginBottom: 0 }}>{title}</h1>
-      <div style={{ marginBottom: 'calc(0.40625rem - 1px)' }}>
-        <TimeToRead minutes={data.markdownRemark.timeToRead}/>
-      </div>
+      <Title>{title}</Title>
+      <TimeToRead minutes={data.markdownRemark.timeToRead} />
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />

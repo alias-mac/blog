@@ -1,8 +1,19 @@
 
 import React, { PureComponent } from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 
 import kebabCase from 'lodash.kebabcase';
+
+const TagList = styled.ul`
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline;
+    margin: 0 0.5rem;
+  }
+`;
 
 export default class Tags extends PureComponent {
 
@@ -11,20 +22,13 @@ export default class Tags extends PureComponent {
     const { list } = this.props;
 
     return (
-      <ul style={{
-        listStyle: 'none',
-        margin: 0,
-      }}>
-        {list.map((tag) => (
-          <li
-            key={tag}
-            style={{
-              display: 'inline',
-              margin: '0 0.5rem',
-            }}
-          ><Link className="tags__link" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>
+      <TagList>
+        {list.map(tag => (
+          <li key={tag}>
+            <Link className="tags__link" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+          </li>
         ))}
-      </ul>
+      </TagList>
     );
   }
 

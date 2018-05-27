@@ -1,7 +1,13 @@
 
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 
-export default class MinutesToRead extends PureComponent {
+const Styled = styled.small`
+  margin-bottom: calc(0.40625rem - 1px);
+  display: block;
+`;
+
+export default class TimeToRead extends PureComponent {
 
   render() {
 
@@ -9,7 +15,7 @@ export default class MinutesToRead extends PureComponent {
     const unit = minutes > 1 ? 'minutes' : 'minute';
 
     return (
-      <small>{this.props.minutes} {unit} to read</small>
+      <Styled>{this.props.minutes} {unit} to read</Styled>
     );
   }
 

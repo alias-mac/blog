@@ -5,28 +5,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 
 import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
 
+const PostList = styled.ul`
+  list-style: none;
+  margin: 0;
+`;
+
 export default function IndexPage(props) {
   return (
-    <ul style={{
-      listStyle: 'none',
-      margin: 0,
-    }}>
+    <PostList>
       {props.data.allMarkdownRemark.edges.map(({ node }) => (
         <li key={node.fields.slug}>
           <article>
             <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
-            <TimeToRead minutes={node.timeToRead}/>
+            <TimeToRead minutes={node.timeToRead} />
             <p>{node.excerpt}</p>
             <h4>Tags:</h4>
             <Tags list={node.frontmatter.tags} />
           </article>
         </li>
       ))}
-    </ul>
+    </PostList>
   );
 }
 

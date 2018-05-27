@@ -6,67 +6,66 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-
-import logo from './logo.png';
+import styled from 'styled-components';
 
 import 'prismjs/themes/prism-okaidia.css';
 
+import logo from './logo.png';
+
+const Navbar = styled.nav`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 10px 0 0;
+  height: 100px;
+`;
+
+const HomeLogoLink = styled(Link)`
+  float: left;
+  padding: 0 20px;
+`;
+
+const HomeLink = styled(Link)`
+  color: #262626;
+  text-decoration: none;
+`;
+
+const BlogName = styled.h1`
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  font-size: 60px;
+  font-family: 'PT Sans';
+  line-height: 60px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 0 #cecece;
+`;
+
+const Teaser = styled.h3`
+  color: #7d7d7d;
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 28px;
+  letter-spacing: -1px;
+`;
+
+const Content = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+`;
+
 const Header = () => (
-  <div
-    style={{
-      margin: '0 auto',
-      maxWidth: 960,
-      padding: '10px 0 0',
-      height: '100px',
-    }}
-  >
-    <Link
-      to="/"
-      title="Home"
-      rel="home"
-      style={{
-        float: 'left',
-        padding: '0 20px',
-      }}
-    >
+  <Navbar>
+    <HomeLogoLink to="/" title="Home" rel="home">
       <img src={logo} alt="Home" />
-    </Link>
-    <h1 style={{
-        margin: 0,
-        padding: 0,
-        borderBottom: 'none',
-        fontSize: '60px',
-        fontFamily: 'PT Sans',
-        lineHeight: '60px',
-        letterSpacing: '-1px',
-        textShadow: '0 2px 0 #cecece',
-      }}
-    >
-      <Link
-        to="/"
-        title="Home"
-        rel="home"
-        style={{
-          color: '#262626',
-          textDecoration: 'none',
-        }}
-      >
-        Open War
-      </Link>
-    </h1>
-    <h3
-      style={{
-        color: '#7d7d7d',
-        margin: 0,
-        fontSize: '24px',
-        fontWeight: 'normal',
-        lineHeight: '28px',
-        letterSpacing: '-1px',
-      }}
-    >
-      Make Code, Not War
-    </h3>
-  </div>
+    </HomeLogoLink>
+    <BlogName>
+      <HomeLink to="/" title="Home" rel="home">Open War</HomeLink>
+    </BlogName>
+    <Teaser>Make Code, Not War</Teaser>
+  </Navbar>
 );
 
 const TemplateWrapper = ({ children }) => (
@@ -79,16 +78,9 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <Content>
       {children()}
-    </div>
+    </Content>
   </div>
 );
 
