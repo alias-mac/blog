@@ -93,5 +93,11 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://86ec38925e88424bbad8ca10863c834f@sentry.io/1215243',
+      },
+    },
   ],
 };
