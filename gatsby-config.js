@@ -99,5 +99,11 @@ module.exports = {
         dsn: 'https://86ec38925e88424bbad8ca10863c834f@sentry.io/1215243',
       },
     },
+    {
+      resolve: 'gatsby-plugin-fullstory',
+      options: {
+        fs_org: 'CAFZW',
+      },
+    },
   ],
 };
