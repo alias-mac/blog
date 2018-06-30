@@ -63,7 +63,7 @@ smtp.gmail.com:587 username@gmail.com:password
 
 Don't forget to replace **username** with your actual username and **password** with your password! 🙂
 
-Now you need to create the `/etc/postfix/sasl_passwd.db` file from the `/etc/postfix/sasl_passwd` one and keep them safe:
+Now you need to create the `/etc/postfix/sasl_passwd.db` file from the `/etc/postfix/sasl_passwd` one, and keep them safe:
 
 ```bash
 sudo postmap hash:/etc/postfix/sasl_passwd
