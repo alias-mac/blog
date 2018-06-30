@@ -5,7 +5,7 @@ tags: []
 published: true
 ---
 
-I've been using [Homebrew](http://brew.sh) for quite some time now and dam, I wish the first package managers I tried (like [MacPorts](http://www.macports.org) or [Fink](http://fink.thetis.ig42.org)) where as awesome as this.
+I've been using [Homebrew](http://brew.sh) for quite some time now and damn, I wish the first package managers I tried (like [MacPorts](http://www.macports.org) or [Fink](http://fink.thetis.ig42.org)) where as awesome as this.
 
 The 3 amazing things about Homebrew are:
 
