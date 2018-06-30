@@ -33,7 +33,7 @@ const BlogName = styled.h1`
   margin: 0;
   padding: 0;
   border-bottom: none;
-  font-size: 60px;
+  font-size: 46px;
   font-family: 'PT Sans';
   line-height: 60px;
   letter-spacing: -1px;
@@ -43,7 +43,7 @@ const BlogName = styled.h1`
 const Teaser = styled.h3`
   color: #7d7d7d;
   margin: 0;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: normal;
   line-height: 28px;
   letter-spacing: -1px;
