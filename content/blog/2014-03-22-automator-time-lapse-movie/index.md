@@ -15,6 +15,6 @@ When you plug the camera in the Macbook USB port and switch on the camera it wil
 Now, tune your settings to your liking and see the end result on the folder.
 
 You can then convert those photos into movies using [iMovie](https://www.apple.com/mac/imovie/) or another application that you prefer.
-I will leave that to my wife to decide ;)
+I will leave that to my wife to decide 😉
 
 Have fun with it!

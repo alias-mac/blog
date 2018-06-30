@@ -7,7 +7,7 @@ published: true
 
 While its ok to serve a blog or a web page in normal HTTP protocol, when you login into your CMS (or any other web application you might use) should be done using a more secure protocol (HTTPS).
 
-[Drupal](https://drupal.org) is a great CMS (I'm never tired of writing this :)) and allows you to serve your pages in standard HTTP while forcing the login to be secure.
+[Drupal](https://drupal.org) is a great CMS (I'm never tired of writing this 🙂) and allows you to serve your pages in standard HTTP while forcing the login to be secure.
 
 To enable this feature you just need to login into your Drupal instance and go to `Administration > Configuration > People > Secure login` or by url path `admin/config/people/securelogin`. You can read all the information in that page which is really detailed.
 

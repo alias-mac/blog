@@ -65,4 +65,4 @@ PHPUnit 3.6.12 by Sebastian Bergmann.
 
 You can now start testing your projects with it. I'll make a post about configuring phpunit on you projects ASAP.
 
-Thats all folks :)
+Thats all folks 🙂

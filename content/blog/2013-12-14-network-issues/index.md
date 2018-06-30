@@ -40,6 +40,6 @@ Destination        Gateway            Flags        Refs      Use   Netif Expire
 default            <router_ip>        UGSc           xx        0     en1
 ```
 
-I hope this will help you and avoid a restart :)
+I hope this will help you and avoid a restart 🙂
 
 Feel free to drop a comment if you still see issues or fixed in a different way.

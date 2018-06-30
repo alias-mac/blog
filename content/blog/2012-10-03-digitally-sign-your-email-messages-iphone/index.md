@@ -18,7 +18,7 @@ So lets start by exporting 2 files you'll need:
 - your certificate only
 - your private key with the certificate (choose the 2 files together) on the Keychain Access app (if you use OS X) and when exporting, please provide a strong password.
 
-You can send an email to yourself with the 2 files and then delete it or if you are a security maniac open your browser and point to your "local network special encrypted and need to login web app" or whatever makes you feel more secure :)
+You can send an email to yourself with the 2 files and then delete it or if you are a security maniac open your browser and point to your "local network special encrypted and need to login web app" or whatever makes you feel more secure 🙂
 
 If you used the easy way, open the email you just sent to your self and open the files attached, click install and fill the password you used to export. If you have passcode enabled on you iPhone, you'll have to unlock after click install and only after you'll be prompted for the private key password.
 

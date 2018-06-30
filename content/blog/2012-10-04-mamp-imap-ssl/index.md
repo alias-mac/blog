@@ -7,7 +7,7 @@ published: true
 
 Unfortunately [MAMP](http://www.mamp.info) doesn't come with imap ssl support by default and [GMail](http://gmail.com) needs it when you are connecting through imap.
 
-Just for the record, I'm posting this in the current version of [MAMP](http://www.mamp.info), that is 2.1.1 and in the Mountain Lion OSX 10.8.1 version. I'm not sure if it works the same way on other versions, but you can leave a comment about it :)
+Just for the record, I'm posting this in the current version of [MAMP](http://www.mamp.info), that is 2.1.1 and in the Mountain Lion OSX 10.8.1 version. I'm not sure if it works the same way on other versions, but you can leave a comment about it 🙂
 
 You can check if your `phpinfo` has `SSL Support enabled` on the `imap` group.
 

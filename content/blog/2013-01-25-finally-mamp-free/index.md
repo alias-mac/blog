@@ -72,7 +72,7 @@ The `README.md` file of [homebrew-php](https://github.com/josegonzalez/homebrew-
 
 - Confirm that you are running Homebrew with the latest `Command Line Tools`. Check [this](/homebrew) if you need to know how to set it up;
 - Confirm that Homebrew is ready for action using the `brew doctor` command;
-- Confirm that you are up to date :) `brew update && brew upgrade`;
+- Confirm that you are up to date 🙂 `brew update && brew upgrade`;
 - Setup the homebrew/dupes tap which has dependencies we need `brew tap homebrew/dupes`;
 - Run `brew tap josegonzalez/homebrew-php` to get all the needed formulas for our php;
 - Install the php version you need `brew install php54` or `php53`;

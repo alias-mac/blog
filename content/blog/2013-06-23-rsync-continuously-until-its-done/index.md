@@ -5,7 +5,7 @@ tags: [Rsync, Linux]
 published: true
 ---
 
-My concept of Done isn't only applied on Scrum, but into my programming as well :)
+My concept of Done isn't only applied on Scrum, but into my programming as well 🙂
 
 While syncing my data to do an offsite backup, I often run into connection issues (mostly due to IP changes - since I'm using a dyndns service, because it's free [as in beer](http://en.wikipedia.org/wiki/Free_as_in_free_beer#.22Free_beer.22_vs_.22free_speech.22_distinction)).
 

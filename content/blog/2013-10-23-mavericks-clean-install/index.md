@@ -42,13 +42,13 @@ Basically I did some digging and if you read the [iCloud Keychain FAQ](http://su
 
 Meaning that you can use the best of both worlds!
 
-So I did that and now you should be able to install all your purchased apps from `App Store` and be ready for full production in less than 1 hour :)
+So I did that and now you should be able to install all your purchased apps from `App Store` and be ready for full production in less than 1 hour 🙂
 
 ## Troubleshooting
 
 I had a few issues after a few days running Mavericks. I began having a lot of resources being sucked by systemstats process. I [reset the SMC and PRAM](https://discussions.apple.com/docs/DOC-3604) and it looks like it's solved.
 
-After a few more hours I realized that the problem came from the Energy tab in the Activity Monitor. Every time I navigate to it the systemstats fire up. For now, I'm just avoiding it :)
+After a few more hours I realized that the problem came from the Energy tab in the Activity Monitor. Every time I navigate to it the systemstats fire up. For now, I'm just avoiding it 🙂
 
 Follow [this thread](https://devforums.apple.com/message/827251#827251) to know more about it.
 

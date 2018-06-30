@@ -27,7 +27,7 @@ echo `env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 8`'
 
 Now that I have a website created, I just need a domain... [Namecheap](http://www.namecheap.com/) is the way to go!
 
-Since I'm an Open Source addicted (besides an Apple one :)) and decided to have a blog to share more information of the things I explore on a daily basis, I decided the name open-war.com (keeping my information Open and my name Guerra = War)
+Since I'm an Open Source addicted (besides an Apple one 🙃) and decided to have a blog to share more information of the things I explore on a daily basis, I decided the name open-war.com (keeping my information Open and my name Guerra = War)
 
 
 Now lets deploy it.
@@ -44,4 +44,4 @@ Log into your new website and there will be a "Add new content" link on the firs
 
 Give it a title, create some tags on it, fill the body and there you go!
 
-There are more things to do, but they will come later :)
+There are more things to do, but they will come later 🙂

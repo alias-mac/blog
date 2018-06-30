@@ -7,7 +7,7 @@ published: true
 
 [MAMP](http://www.mamp.info) doesn't come with [XHProf](http://pecl.php.net/package/xhprof) support by default and sometimes we need more than just a simple debug tool with [Xdebug](/xdebug-mamp).
 
-Just for the record, I'm posting this in the current version of [MAMP](http://www.mamp.info), that is 2.1.1 and in the Mountain Lion OSX 10.8.1 version. I'm not sure if it works the same way on other versions, but you can leave a comment about it :)
+Just for the record, I'm posting this in the current version of [MAMP](http://www.mamp.info), that is 2.1.1 and in the Mountain Lion OSX 10.8.1 version. I'm not sure if it works the same way on other versions, but you can leave a comment about it 🙂
 
 So, how can we enable it and make it work?
 
@@ -25,7 +25,7 @@ Now grab a XHProf from [GitHub](https://github.com/facebook/xhprof) or [pecl](ht
 mv ~/Downloads/xhprof-0.9.2/xhprof-0.9.2 /Applications/MAMP/bin/php/php5.4.4/include/xhprof
 ```
 
-Let's get ready for build :)
+Let's get ready for build 🙂
 
 ## Building our xhprof.so
 

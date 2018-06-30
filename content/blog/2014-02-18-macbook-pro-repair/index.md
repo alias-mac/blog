@@ -16,7 +16,7 @@ Anyway, like I said, it is an old Macintosh and there is nothing to loose.
 
 We searched a bit more on the internet and decided to do it without the [oven method](https://www.youtube.com/watch?v=Ztzv2OlQJuU), instead we decided to use the [heat gun](https://www.youtube.com/watch?v=iP4HwYD9LaQ).
 
-The methods are similar, but we prefer to use the oven to make cookies :)
+The methods are similar, but we prefer to use the oven to make cookies 🙂
 
 An important thing we had in mind was the [temperature that solder melts](https://en.wikipedia.org/wiki/Solder). Using a laser thermometer that we got cheap, we kept checking the temperature to see if it was a bit higher than the melting point (around 190º to 200ºC). We did it like the video shows - about 10 min across the several chips (including the graphic card). After it was done, we waited for the board to cool (which wasn't hard since it is a bit chilly outside).
 
