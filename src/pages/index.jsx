@@ -5,6 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import { CommentCount } from 'disqus-react';
 import styled from 'styled-components';
 
 import Tags from '../components/Tags';
@@ -26,6 +27,15 @@ export default function IndexPage(props) {
             <p>{node.excerpt}</p>
             <h4>Tags:</h4>
             <Tags list={node.frontmatter.tags} />
+            <small>
+              <CommentCount
+                shortname="blog-open-war"
+                config={{
+                  title: node.frontmatter.title,
+                  url: `https://blog.open-war.com${node.fields.slug}`,
+                }}
+              />
+            </small>
           </article>
         </li>
       ))}
