@@ -4,7 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDisqusComments from 'react-disqus-comments';
+import { DiscussionEmbed } from 'disqus-react';
 import styled from 'styled-components';
 
 import Tags from '../components/Tags';
@@ -28,10 +28,12 @@ export default function Template({ data }) {
       />
       <h4>Tags:</h4>
       <Tags list={tags} />
-      <ReactDisqusComments
+      <DiscussionEmbed
         shortname="blog-open-war"
-        title={title}
-        url={`https://blog.open-war.com${slug}`}
+        config={{
+          title,
+          url: `https://blog.open-war.com${slug}`,
+        }}
       />
     </article>
   );
