@@ -22,6 +22,16 @@ Theme.plugins = [
 
 Theme.overrideThemeStyles = (typography, options, styles) => ({
 
+  'article :not(pre) > code[class*="language-"]': {
+    whiteSpace: 'nowrap',
+    backgroundColor: 'hsla(0, 0%, 0%, 0.04)',
+    color: 'hsla(0, 0%, 0%, 0.8)',
+    borderRadius: '3px',
+    fontFamily: '"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace',
+    padding: '0.2em 0',
+    textShadow: 'none',
+  },
+
   '.gatsby-highlight pre': {
     boxShadow: '1px 1px 20px rgba(20, 20, 20, 0.27)',
   },
