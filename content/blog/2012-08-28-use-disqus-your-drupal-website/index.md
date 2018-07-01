@@ -10,7 +10,7 @@ As you can see I'm using [DISQUS](http://disqus.com) to moderate and allow comme
 This allows a much easier management of all the comments made on your website, due to several facts:
 
 - faster page loading (without comments) since the comments will be loaded later outside from your platform;
-- you can export the comments from [DISQUS](http://disqus.com) and import them on the new platform where you want now your comments (so its reversible);
+- you can export the comments from [DISQUS](http://disqus.com) and import them on the new platform where you want now your comments (so it is reversible);
 - it's quite simpler to use, since if someone is already using it on another blog or other websites, they are familiar how it works (not a new different way to comment);
 - the visitor won't need to login only on your blog or website just to comment, he/she/it can use the [DISQUS](http://disqus.com) login that is already integrated with several other platforms (like Google, Facebook and Twitter);
 - it has several features that are being upgraded and created that your website can take advantage without a need to upgrade the comments module or other developments;
