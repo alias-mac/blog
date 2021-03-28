@@ -16,7 +16,7 @@ const PostList = styled.ul`
   margin: 0;
 `;
 
-export default function IndexPage({data}) {
+export default function IndexPage({ data }) {
   return (
     <Layout>
       <PostList>
