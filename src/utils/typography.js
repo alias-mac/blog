@@ -11,7 +11,7 @@ function getExternalLinkUrl(props) {
   const externalLinkString = ReactDOMServer.renderToStaticMarkup(
     <ExternalLinkIcon {...props} />,
   );
-  const externalLinkBase64 = new Buffer(externalLinkString).toString('base64');
+  const externalLinkBase64 = Buffer.from(externalLinkString).toString('base64');
 
   return `data:image/svg+xml;base64,${externalLinkBase64}`;
 }
