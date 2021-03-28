@@ -23,7 +23,9 @@ export default function IndexPage({ data }) {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.fields.slug}>
             <article>
-              <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
+              <Link to={node.fields.slug}>
+                <h1>{node.frontmatter.title}</h1>
+              </Link>
               <TimeToRead minutes={node.timeToRead} />
               <p>{node.excerpt}</p>
               <h4>Tags:</h4>
@@ -48,16 +50,18 @@ export default function IndexPage({ data }) {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          fields: PropTypes.shape({
-            slug: PropTypes.string.isRequired,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            fields: PropTypes.shape({
+              slug: PropTypes.string.isRequired,
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+            }).isRequired,
           }).isRequired,
-          frontmatter: PropTypes.shape({
-            title: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired,
-      })),
+        }),
+      ),
     }).isRequired,
   }).isRequired,
 };
@@ -67,7 +71,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { published: { eq: true } } }
-      sort: { fields: [ frontmatter___date ], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {

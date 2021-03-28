@@ -10,7 +10,6 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 
 export default function Template({ data, pageContext }) {
-
   const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
 
@@ -19,7 +18,10 @@ export default function Template({ data, pageContext }) {
       <section>
         <Helmet>
           <title>{`Posts tagged as "${tag}" | Open War`}</title>
-          <link rel="canonical" href={`https://blog.open-war.com/tags/${kebabCase(tag)}`} />
+          <link
+            rel="canonical"
+            href={`https://blog.open-war.com/tags/${kebabCase(tag)}`}
+          />
         </Helmet>
         <ul>
           {edges.map(({ node }) => (
@@ -36,16 +38,18 @@ export default function Template({ data, pageContext }) {
 Template.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          fields: PropTypes.shape({
-            slug: PropTypes.string.isRequired,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            fields: PropTypes.shape({
+              slug: PropTypes.string.isRequired,
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+            }).isRequired,
           }).isRequired,
-          frontmatter: PropTypes.shape({
-            title: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired,
-      })),
+        }),
+      ),
     }).isRequired,
   }).isRequired,
   pageContext: PropTypes.shape({

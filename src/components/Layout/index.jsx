@@ -63,7 +63,9 @@ const Header = () => (
       <img src={logo} alt="Home" />
     </HomeLogoLink>
     <BlogName>
-      <HomeLink to="/" title="Home" rel="home">Open War</HomeLink>
+      <HomeLink to="/" title="Home" rel="home">
+        Open War
+      </HomeLink>
     </BlogName>
     <Teaser>Make Code, Not War</Teaser>
   </Navbar>
@@ -75,13 +77,14 @@ const Layout = ({ children }) => (
       title="Open War | Make Code, Not War"
       meta={[
         { name: 'description', content: 'Blog about code and other ideas' },
-        { name: 'keywords', content: 'blog, code, development, web development' },
+        {
+          name: 'keywords',
+          content: 'blog, code, development, web development',
+        },
       ]}
     />
     <Header />
-    <Content>
-      {children}
-    </Content>
+    <Content>{children}</Content>
   </div>
 );
 

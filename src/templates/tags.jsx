@@ -8,14 +8,13 @@ import React from 'react';
 import Layout from '../components/Layout';
 
 export default function Template({ pageContext }) {
-
   const { tagList } = pageContext;
 
   return (
     <Layout>
       <section>
         <ul>
-          {tagList.map(tag => (
+          {tagList.map((tag) => (
             <li key={kebabCase(tag)}>
               <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
             </li>

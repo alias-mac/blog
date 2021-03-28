@@ -16,7 +16,6 @@ const Title = styled.h1`
 `;
 
 export default function Template({ data }) {
-
   const { slug } = data.markdownRemark.fields;
   const { tags, title } = data.markdownRemark.frontmatter;
 
@@ -25,9 +24,7 @@ export default function Template({ data }) {
       <article>
         <Title>{title}</Title>
         <TimeToRead minutes={data.markdownRemark.timeToRead} />
-        <div
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
         <h4>Tags:</h4>
         <Tags list={tags} />
         <DiscussionEmbed

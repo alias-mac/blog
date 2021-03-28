@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
@@ -8,15 +7,14 @@ const Styled = styled.small`
 `;
 
 export default class TimeToRead extends PureComponent {
-
   render() {
-
     const { minutes } = this.props;
     const unit = minutes > 1 ? 'minutes' : 'minute';
 
     return (
-      <Styled>{this.props.minutes} {unit} to read</Styled>
+      <Styled>
+        {this.props.minutes} {unit} to read
+      </Styled>
     );
   }
-
 }
