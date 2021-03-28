@@ -4,7 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
@@ -69,7 +69,7 @@ const Header = () => (
   </Navbar>
 );
 
-const TemplateWrapper = ({ children }) => (
+const Layout = ({ children }) => (
   <div>
     <Helmet
       title="Open War | Make Code, Not War"
@@ -80,16 +80,16 @@ const TemplateWrapper = ({ children }) => (
     />
     <Header />
     <Content>
-      {children()}
+      {children}
     </Content>
   </div>
 );
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
   children: PropTypes.func,
 };
-TemplateWrapper.defaultProps = {
+Layout.defaultProps = {
   children: undefined,
 };
 
-export default TemplateWrapper;
+export default Layout;

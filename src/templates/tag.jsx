@@ -2,31 +2,34 @@
  * Copyright (c) 2017-present Filipe Guerra
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash.kebabcase';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../components/Layout';
 
-export default function Template({ data, pathContext }) {
+export default function Template({ data, pageContext }) {
 
-  const { tag } = pathContext;
+  const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
 
   return (
-    <section>
-      <Helmet>
-        <title>{`Posts tagged as "${tag}" | Open War`}</title>
-        <link rel="canonical" href={`https://blog.open-war.com/tags/${kebabCase(tag)}`} />
-      </Helmet>
-      <ul>
-        {edges.map(({ node }) => (
-          <li key={node.fields.slug}>
-            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <Layout>
+      <section>
+        <Helmet>
+          <title>{`Posts tagged as "${tag}" | Open War`}</title>
+          <link rel="canonical" href={`https://blog.open-war.com/tags/${kebabCase(tag)}`} />
+        </Helmet>
+        <ul>
+          {edges.map(({ node }) => (
+            <li key={node.fields.slug}>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Layout>
   );
 }
 
@@ -45,7 +48,7 @@ Template.propTypes = {
       })),
     }).isRequired,
   }).isRequired,
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }).isRequired,
 };

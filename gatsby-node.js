@@ -10,27 +10,29 @@ const kebabCase = require('lodash.kebabcase');
  *
  * @see https://www.gatsbyjs.org/docs/node-apis/#createPages
  */
-exports.createPages = async ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   const blogTemplate = resolve('./src/templates/blog.jsx');
   const tagsTemplate = resolve('./src/templates/tags.jsx');
   const tagTemplate = resolve('./src/templates/tag.jsx');
 
-  const allMarkdown = await graphql(`{
-    allMarkdownRemark(limit: 1000) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            tags
+  const allMarkdown = await graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+            }
           }
         }
       }
     }
-  }`);
+  `);
 
   if (allMarkdown.errors) {
     throw Error(allMarkdown.errors);
@@ -39,7 +41,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   const tagSet = new Set();
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-
     if (node.frontmatter.tags) {
       node.frontmatter.tags.forEach((tag) => {
         tagSet.add(tag);
@@ -81,8 +82,8 @@ const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+?)\/index.md$/;
 /**
  * Add custom fields to MarkdownRemark nodes.
  */
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type !== 'MarkdownRemark') {
     return;

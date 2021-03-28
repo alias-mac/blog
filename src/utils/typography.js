@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
@@ -9,25 +8,24 @@ import Theme from 'typography-theme-github';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 
 function getExternalLinkUrl(props) {
-
-  const externalLinkString = ReactDOMServer.renderToStaticMarkup(<ExternalLinkIcon {...props} />);
+  const externalLinkString = ReactDOMServer.renderToStaticMarkup(
+    <ExternalLinkIcon {...props} />,
+  );
   const externalLinkBase64 = new Buffer(externalLinkString).toString('base64');
 
   return `data:image/svg+xml;base64,${externalLinkBase64}`;
 }
 
-Theme.plugins = [
-  new CodePlugin(),
-];
+Theme.plugins = [new CodePlugin()];
 
 Theme.overrideThemeStyles = (typography, options, styles) => ({
-
   'article :not(pre) > code[class*="language-"]': {
     whiteSpace: 'nowrap',
     backgroundColor: 'hsla(0, 0%, 0%, 0.04)',
     color: 'hsla(0, 0%, 0%, 0.8)',
     borderRadius: '3px',
-    fontFamily: '"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace',
+    fontFamily:
+      '"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace',
     padding: '0.2em 0',
     textShadow: 'none',
   },
@@ -55,4 +53,6 @@ if (process.env.NODE_ENV !== 'production') {
   typography.injectStyles();
 }
 
-export default typography;
+const { rhythm, scale } = typography;
+
+export { rhythm, scale, typography as default };

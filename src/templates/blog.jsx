@@ -2,11 +2,12 @@
  * Copyright (c) 2017-present Filipe Guerra
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
 import { DiscussionEmbed } from 'disqus-react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-
+import Layout from '../components/Layout';
 import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
 
@@ -20,22 +21,24 @@ export default function Template({ data }) {
   const { tags, title } = data.markdownRemark.frontmatter;
 
   return (
-    <article>
-      <Title>{title}</Title>
-      <TimeToRead minutes={data.markdownRemark.timeToRead} />
-      <div
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
-      <h4>Tags:</h4>
-      <Tags list={tags} />
-      <DiscussionEmbed
-        shortname="blog-open-war"
-        config={{
-          title,
-          url: `https://blog.open-war.com${slug}`,
-        }}
-      />
-    </article>
+    <Layout>
+      <article>
+        <Title>{title}</Title>
+        <TimeToRead minutes={data.markdownRemark.timeToRead} />
+        <div
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+        <h4>Tags:</h4>
+        <Tags list={tags} />
+        <DiscussionEmbed
+          shortname="blog-open-war"
+          config={{
+            title,
+            url: `https://blog.open-war.com${slug}`,
+          }}
+        />
+      </article>
+    </Layout>
   );
 }
 

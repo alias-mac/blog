@@ -2,12 +2,12 @@
  * Copyright (c) 2017-present Filipe Guerra
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import { CommentCount } from 'disqus-react';
+import { graphql, Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-
+import Layout from '../components/Layout';
 import Tags from '../components/Tags';
 import TimeToRead from '../components/TimeToRead';
 
@@ -16,30 +16,32 @@ const PostList = styled.ul`
   margin: 0;
 `;
 
-export default function IndexPage(props) {
+export default function IndexPage({data}) {
   return (
-    <PostList>
-      {props.data.allMarkdownRemark.edges.map(({ node }) => (
-        <li key={node.fields.slug}>
-          <article>
-            <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
-            <TimeToRead minutes={node.timeToRead} />
-            <p>{node.excerpt}</p>
-            <h4>Tags:</h4>
-            <Tags list={node.frontmatter.tags} />
-            <small>
-              <CommentCount
-                shortname="blog-open-war"
-                config={{
-                  title: node.frontmatter.title,
-                  url: `https://blog.open-war.com${node.fields.slug}`,
-                }}
-              />
-            </small>
-          </article>
-        </li>
-      ))}
-    </PostList>
+    <Layout>
+      <PostList>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <li key={node.fields.slug}>
+            <article>
+              <Link to={node.fields.slug}><h1>{node.frontmatter.title}</h1></Link>
+              <TimeToRead minutes={node.timeToRead} />
+              <p>{node.excerpt}</p>
+              <h4>Tags:</h4>
+              <Tags list={node.frontmatter.tags} />
+              <small>
+                <CommentCount
+                  shortname="blog-open-war"
+                  config={{
+                    title: node.frontmatter.title,
+                    url: `https://blog.open-war.com${node.fields.slug}`,
+                  }}
+                />
+              </small>
+            </article>
+          </li>
+        ))}
+      </PostList>
+    </Layout>
   );
 }
 
