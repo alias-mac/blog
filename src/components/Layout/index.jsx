@@ -2,14 +2,11 @@
  * Copyright (c) 2017-present Filipe Guerra
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import 'prismjs/themes/prism-okaidia.css';
+import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-
-import 'prismjs/themes/prism-okaidia.css';
-
 import logo from './logo.png';
 
 const Navbar = styled.nav`
