@@ -12,9 +12,7 @@ export default class TimeToRead extends PureComponent {
     const unit = minutes > 1 ? 'minutes' : 'minute';
 
     return (
-      <Styled>
-        {this.props.minutes} {unit} to read
-      </Styled>
+      <Styled>{minutes} {unit} to read</Styled>
     );
   }
 }
