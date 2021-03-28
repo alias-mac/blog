@@ -85,11 +85,4 @@ const Layout = ({ children }) => (
   </div>
 );
 
-Layout.propTypes = {
-  children: PropTypes.func,
-};
-Layout.defaultProps = {
-  children: undefined,
-};
-
 export default Layout;
