@@ -1,11 +1,9 @@
 module.exports = {
   env: {
-    'es6': true,
-    'browser': true,
+    es6: true,
+    browser: true,
   },
-  extends: [
-    'airbnb',
-  ],
+  extends: ['airbnb'],
   rules: {
     // in jest this is normal
     'func-names': ['error', 'never'],
@@ -19,6 +17,7 @@ module.exports = {
 
     // https://github.com/facebookincubator/create-react-app uses js too
     'react/jsx-filename-extension': 'off',
+    'react/jsx-one-expression-per-line': 'off',
 
     // let the code breathe!
     'padded-blocks': 'off',
