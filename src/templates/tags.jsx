@@ -7,9 +7,9 @@ import kebabCase from 'lodash.kebabcase';
 import React from 'react';
 import Layout from '../components/Layout';
 
-export default function Template({ pathContext }) {
+export default function Template({ pageContext }) {
 
-  const { tagList } = pathContext;
+  const { tagList } = pageContext;
 
   return (
     <Layout>
