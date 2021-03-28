@@ -17,7 +17,7 @@ function getAllNodes(connection) {
         }
 
         results.forEach((result) => {
-          articles.set(result.vid, Object.assign({}, result));
+          articles.set(result.vid, { ...result });
         });
 
         return resolve(articles);

@@ -5,6 +5,9 @@ module.exports = {
   },
   extends: ['airbnb'],
   rules: {
+    // this enforces bad patterns
+    'arrow-body-style': 'off',
+
     // in jest this is normal
     'func-names': ['error', 'never'],
     'prefer-arrow-callback': 'off',
