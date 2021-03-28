@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import Typography from 'typography';
 import CodePlugin from 'typography-plugin-code';
 import Theme from 'typography-theme-github';
-
+import { Buffer } from 'buffer';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 
 function getExternalLinkUrl(props) {
