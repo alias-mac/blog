@@ -55,6 +55,6 @@
     "typography-theme-github": "^0.16.19"
   },
   "engines": {
-    "node": "14.16.x"
+    "node": "14.17.x"
   }
 }
